@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* From Uiverse.io by JkHuger */ 
 #checklist {
     --background: #fff;
     --text: #414856;
     --check: rgb(13, 13, 228);
     --disabled: #c3c8de;
-    --width: 25%;
-    --height: 50%;
+    --width: 60%;
+    --height: fit-content;
     --border-radius: 10px;
     background: var(--background);
     width: var(--width);
@@ -19,9 +18,10 @@
     --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    padding: 30px 85px;
+    padding: 20px 85px;
     display: grid;
-    grid-template-columns: 30px auto;
+    grid-template-columns: auto auto auto auto auto auto;
+    row-gap: 2rem;
     align-items: center;
     justify-content: center;
   }
@@ -209,3 +209,31 @@
       box-shadow: 0 -15px 0 0px #4f29f0, 14px -8px 0 0px #4f29f0, 14px 8px 0 0px #4f29f0, 0 15px 0 0px #4f29f0, -14px 8px 0 0px #4f29f0, -14px -8px 0 0px #4f29f0;
     }
   }
+  @media (max-width: 1024px) {
+    #checklist {
+        grid-template-columns: repeat(3, auto); 
+        width: 80%;
+        padding: 20px 40px;
+        height: fit-content;
+        row-gap: None;
+    }
+}
+@media (max-width: 768px) {
+    #checklist {
+        grid-template-columns: repeat(2, auto);
+        width: 90%;
+        padding: 15px 20px;
+        height: fit-content;
+        row-gap: None;
+    }
+}
+
+@media (max-width: 480px) {
+  #checklist {
+    grid-template-columns: repeat(2, auto);
+      width: 100%;
+      padding: 10px;
+      height: fit-content;
+      row-gap: 1rem;
+  }
+}
